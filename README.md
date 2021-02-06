@@ -1,3 +1,3 @@
 # Simple-Data-Analysis-and-Encrypt-App
 
-- This is simple data analysis and encrypting app.
+- This is a simple data analysis and encryption app.
