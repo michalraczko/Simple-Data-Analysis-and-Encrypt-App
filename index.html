@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Michal Raczko - task 19.1</title>
+
+    <style>
+        
+        body {
+            background-color: rgb(26, 26, 26);
+        }
+
+        #appFieldText {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            position: absolute;
+            left: 785px;
+            bottom: 865px;
+            width: 400px;
+        }
+
+        #textarea {
+            resize: none;
+            position: absolute;
+            bottom: 815px;
+            left: 750px;
+        }
+
+        #btn-00 {
+            position: absolute;
+            bottom: 790px;
+            left: 880px;
+        }
+
+        #btn-01 {
+            position: absolute;
+            bottom: 790px;
+            left: 1400px;
+        }
+
+        #btn-02 {
+            position: absolute;
+            bottom: 625px;
+            left: 900px;
+        }
+
+        #searchInput {
+            position: absolute;
+            bottom: 860px;
+            left: 1340px;
+        }
+
+        #searchBoxText {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            position: absolute;
+            bottom: 865px;
+            left: 1380px;
+        }
+
+        #analysisText {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            position: absolute;
+            bottom: 865px;
+            left: 400px;
+        }
+
+        #dataAnalysisP0 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            position: absolute;
+            bottom: 830px;
+            left: 120px;
+        }
+
+        #dataAnalysisP1 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            position: absolute;
+            bottom: 800px;
+            left: 120px;
+        }
+
+        #dataAnalysisP2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            position: absolute;
+            bottom: 770px;
+            left: 120px;
+        }
+
+        #dataAnalysisP3 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            position: absolute;
+            bottom: 740px;
+            left: 120px;
+        }
+
+        #textareaEncrypt {
+            resize: none;
+            position: absolute;
+            bottom: 650px;
+            left: 750px;
+        }
+
+        #encryptText {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            position: absolute;
+            bottom: 700px;
+            left: 820px;
+        }
+
+        #DAP0 {
+            color: white;
+            position: absolute;
+            bottom: 830px;
+            left: 260px;
+        }
+
+        #DAP1 {
+            color: white;
+            position: absolute;
+            bottom: 800px;
+            left: 337px;
+        }
+
+        #DAP2 {
+            color: white;
+            position: absolute;
+            bottom: 770px;
+            left: 343px;
+        }
+
+        #DAP3 {
+            color: white;
+            position: absolute;
+            bottom: 740px;
+            left: 397px;
+        }
+
+        #counter {
+            font-size: 12px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: black;
+            position: absolute;
+            bottom: 805px;
+            left: 1037px;
+        }
+
+        #encryptText01 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: white;
+            position: absolute;
+            bottom: 540px;
+            left: 875px;
+        }
+
+        #textareaEncrypt01 {
+            resize: none;
+            position: absolute;
+            bottom: 490px;
+            left: 750px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="analysisResult">
+
+        <h3 id="analysisText">Data analysis results</h3>
+
+            <p id="dataAnalysisP0">Full length of text - </p><p id="DAP0"></p><br>
+            <p id="dataAnalysisP1">Length of text without space - </p><p id="DAP1"></p><br>
+            <p id="dataAnalysisP2">Count of numbers in the field - </p><p id="DAP2"></p><br>
+            <p id="dataAnalysisP3">Longest word and his count of letters - </p><p id="DAP3"></p><br>
+
+    </div>
+
+    <div id="datafield">
+
+        <h3 id="appFieldText">Application for simple data analysis</h3>
+            <textarea id="textarea" rows="4" cols="50" placeholder="Type data here!" required="number"></textarea>
+            <p id="counter"></p>
+            <button type="submit" id="btn-00" onclick="TextAnalysis()">Start data analysis</button>
+
+    </div>
+
+    <div id="searchbox">
+
+        <h3 id="searchBoxText">Search box</h3>
+            <input type="text" id="searchInput" placeholder="Search data in textfield.">
+            <button type="submit" id="btn-01" onclick="findWord()">Search</button>
+
+    </div>
+
+    <div id="encryption">
+
+        <h3 id="encryptText">Encryption of text in the field</h3>
+            <textarea id="textareaEncrypt" rows="4" cols="50" placeholder="Type data you want to encrypt."></textarea>
+            <button type="text" id="btn-02" onclick="encrpytData()">Encrypt Data</button>
+
+        <h3 id="encryptText01">Encrypted data</h3>
+            <textarea id="textareaEncrypt01" rows="4" cols="50" placeholder="Your encrypted data will be shown here."></textarea>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
